@@ -5,7 +5,7 @@ var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');  //Import routes for "catalog" area of site
 //Conexão com o Banco
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://pedrohen:wucxi219@ds127954.mlab.com:27954/local_library'; //ALTERA AKI PETER!!!
+var mongoDB = process.env.MONGODB_URI || 'mongodb://pedrohen:wucxi219@ds127954.mlab.com:27954/local_library'; //ALTERA AKI PETER!!!
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
